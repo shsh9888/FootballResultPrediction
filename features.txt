@@ -35,7 +35,7 @@ Team: (This will be for both teams, as in will have 2 values in out feature vect
 26 . Attendance = Crowd Attendance / We have to take it as count giving home team 80% of crowd population - External factor.
 
 27. Home Goal Difference 
-28. Away goal difference
+28. Away goal differencei
 29. Team points - take average of all the seasons
 30. Previous encounters between the teams particular teams win %
 31. ##Betting  Average of all  of them can be taken as sentiment 
