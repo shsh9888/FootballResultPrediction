@@ -137,14 +137,71 @@ for mID, aMatch in matchD.items():
             # Give 45 if data not found
             aMatch[pID] = 45
 
-printDataDetail(teamD, team_cols, [10])
+printDataDetail(matchD, match_cols, [10])
 
+
+# CODE FOR EXTRACTING UNIQUE TEAMS
+uniq = []
+for key, val in matchD.items():
+    if val[2] == '1729' and val not in uniq:
+        uniq.append(val)
+
+uTeams = []
+for uid in uniq:
+    if uid[7] not in uTeams:
+        uTeams.append(uid[7])
+    if uid[8] not in uTeams:
+        uTeams.append(uid[8])
+print ((uTeams))
+
+# Team mappings
+teamNames = {
+    'Blackpool' : 'Blackpool',
+    'Wigan Athletic' : 'Wigan',
+    'Bolton Wanderers' : 'Bolton',
+    'Fulham' : 'Fulham',
+    'Aston Villa' : 'Aston Villa',
+    'West Ham United' : 'West Ham',
+    'Blackburn Rovers' : 'Blackburn',
+    'Everton' : 'Everton',
+    'Watford' : 'Watford',
+    'West Bromwich Albion' : 'West Brom',
+    'Tottenham Hotspur' : 'Tottenham',
+    'Queens Park Rangers' : 'QPR',
+    'Arsenal' : 'Arsenal',
+    'Norwich City' : 'Norwich',
+    'Chelsea' : 'Chelsea',
+    'Bournemouth' : 'Bournemouth',
+    'Manchester United' : 'Man United',
+    'Leicester City' : 'Leicester',
+    'Newcastle United' : 'Newcastle',
+    'Crystal Palace' : 'Crystal Palace',
+    'Southampton' : 'Southampton',
+    'Manchester City' : 'Man City',
+    'Stoke City' : 'Stoke',
+    'Sunderland' : 'Sunderland',
+    'Swansea City' : 'Swansea',
+    'Cardiff City' : 'Cardiff',
+    'Burnley' : 'Burnley',
+    'Hull City' : 'Hull',
+    'Portsmouth' : 'Portsmouth',
+    'Middlesbrough' : 'Middlesbrough',
+    'Liverpool' : 'Liverpool',
+    'Reading' : 'Reading',
+    'Wolverhampton Wanderers' : 'Wolves',
+    'Birmingham City' : 'Birmingham'
+}
 
 '''
-Print an item from the feature vector
-
-oneItem  = fv[fv.keys()[0]]
-thisDate = oneItem[1]
-
-print (oneItem)
+The next and final step is to integrate the attributes from matches to the fv
 '''
+
+#Print an item from the feature vector
+
+# oneItem  = fv[fv.keys()[0]]
+# thisDate = oneItem[1]
+
+# print (oneItem)
+
+# for key, val in fv.items():
+#     print (key, val)
