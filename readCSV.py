@@ -269,7 +269,7 @@ for key, val in fv.items():
 
 import csv
 
-enhancedDataFile = open('final_processed_2.csv', mode='w')
+enhancedDataFile = open('Data/final_processed_2.csv', mode='w')
 enhancedDataFile = csv.writer(enhancedDataFile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
 enhancedDataFile.writerow(fv_cols)
