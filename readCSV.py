@@ -208,10 +208,14 @@ for mID, aMatch in matchD.items():
 for mID, aMatch in matchD.items():
     for pID in range(55,77):
         try:
-            aMatch[pID] = playerD[aMatch[pID]][8]
+            pOverall = playerD[aMatch[pID]][8]
+            if int(pOverall) > 200:
+                aMatch[pID] = '45'
+            else:
+                aMatch[pID] = playerD[aMatch[pID]][8]
         except Exception, e:
             # Give 45 if data not found
-            aMatch[pID] = 45
+            aMatch[pID] = '45'
 
 printDataDetail(matchD, match_cols, [10])
 
@@ -263,8 +267,9 @@ fv_cols.append("away_team_overall")
 # Finally append the attributes!
 for key, val in fv.items():
     add22Players = matchesWithKey[key]
-    homeAttr = teamOverall_name[teamNamesRev[val[2]]]
-    awayAttr = teamOverall_name[teamNamesRev[val[3]]]
+    tempL = val[1].split('_')
+    homeAttr = teamOverall_name[teamNamesRev[tempL[0]]]
+    awayAttr = teamOverall_name[teamNamesRev[tempL[1]]]
     fv[key] += add22Players[55:77] + [str(homeAttr)] + [str(awayAttr)]
 
 import csv
